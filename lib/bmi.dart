@@ -45,7 +45,7 @@ class _BMIScreenState extends State<BMIScreen> {
       appBar: AppBar(
         title: Text(
           "BMI Calculator",
-          style: TextStyle(color: Colors.lightGreen, fontSize: 18),
+          style: TextStyle(color: dodatkowyHexColor, fontSize: 18),
         ),
         backgroundColor: glownyHexColor,
         elevation: 0,
@@ -68,7 +68,7 @@ class _BMIScreenState extends State<BMIScreen> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 40,
-                        color: Colors.lightGreen,
+                        color: dodatkowyHexColor,
                       ),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -87,7 +87,7 @@ class _BMIScreenState extends State<BMIScreen> {
                       controller: _wysokosc,
                       style: TextStyle(
                         fontSize: 40,
-                        color: Colors.lightGreen,
+                        color: dodatkowyHexColor,
                       ),
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -115,7 +115,7 @@ class _BMIScreenState extends State<BMIScreen> {
                 child: Text(
                   'Calculate',
                   style: TextStyle(
-                    color: Colors.lightGreen,
+                    color: dodatkowyHexColor,
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),
@@ -126,7 +126,7 @@ class _BMIScreenState extends State<BMIScreen> {
                 '$bmiResult',
                 style: TextStyle(
                   fontSize: 64.0,
-                  color: Colors.lightGreen,
+                  color: dodatkowyHexColor,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -135,7 +135,7 @@ class _BMIScreenState extends State<BMIScreen> {
                 '$textResult',
                 style: TextStyle(
                   fontSize: 40.0,
-                  color: Colors.lightGreen,
+                  color: dodatkowyHexColor,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -209,19 +209,19 @@ class _BMIScreenState extends State<BMIScreen> {
                     DataCell(Text('Underweight')),
                   ]),
                   DataRow(cells: [
-                    DataCell(Text('18.5-24.9')),
+                    DataCell(Text('18.5 - 24.9')),
                     DataCell(Text('Normal weight')),
                   ]),
                   DataRow(cells: [
-                    DataCell(Text('25.0-29.9')),
+                    DataCell(Text('25.0 - 29.9')),
                     DataCell(Text('Overweight')),
                   ]),
                   DataRow(cells: [
-                    DataCell(Text('30.0-34.9')),
+                    DataCell(Text('30.0 - 34.9')),
                     DataCell(Text('Obesity class I')),
                   ]),
                   DataRow(cells: [
-                    DataCell(Text('35.0-39.9')),
+                    DataCell(Text('35.0 - 39.9')),
                     DataCell(Text('Obesity class II')),
                   ]),
                   DataRow(cells: [

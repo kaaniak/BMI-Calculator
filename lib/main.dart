@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'bmi.dart';
+import 'package:bmi/colors.dart';
 
 void main() => runApp(bmiapp());
 
@@ -16,7 +17,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: glownyHexColor,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -26,7 +27,7 @@ class MyHomePage extends StatelessWidget {
             );
           },
           style: ElevatedButton.styleFrom(
-            primary: Colors.lightGreen,
+            primary: dodatkowyHexColor,
             padding: EdgeInsets.symmetric(horizontal: 70.0, vertical: 10.0),
           ),
           child: Text(

@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:bmi/colors.dart';
 
 class RightBar extends StatelessWidget {
   final double barWidth;
@@ -19,7 +20,7 @@ class RightBar extends StatelessWidget {
                 topRight: Radius.circular(20),
                 bottomRight: Radius.circular(20),
               ),
-              color: Colors.lightGreen),
+              color: dodatkowyHexColor),
         ),
       ],
     );

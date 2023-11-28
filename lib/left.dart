@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:bmi/colors.dart';
 
 class LeftBar extends StatelessWidget {
   final double barWidth;
@@ -19,7 +20,7 @@ class LeftBar extends StatelessWidget {
                 topLeft: Radius.circular(20),
                 bottomLeft: Radius.circular(20),
               ),
-              color: Colors.lightGreen),
+              color: dodatkowyHexColor),
         ),
       ],
     );
