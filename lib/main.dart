@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'bmi.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(bmiapp());
 
-class MyApp extends StatelessWidget {
+class bmiapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

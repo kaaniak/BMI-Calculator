@@ -39,7 +39,6 @@ class _BMIScreenState extends State<BMIScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Sprawdź, czy klawiatura jest widoczna
     bool isKeyboardVisible = MediaQuery.of(context).viewInsets.bottom > 0;
 
     return Scaffold(
@@ -103,6 +102,7 @@ class _BMIScreenState extends State<BMIScreen> {
                   ),
                 ],
               ),
+              SizedBox(height: 20),
               SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () {
@@ -116,7 +116,7 @@ class _BMIScreenState extends State<BMIScreen> {
                   'Calculate',
                   style: TextStyle(
                     color: Colors.lightGreen,
-                    fontSize: 26.0,
+                    fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -141,7 +141,7 @@ class _BMIScreenState extends State<BMIScreen> {
               ),
               SizedBox(height: 10),
               if (!isKeyboardVisible) ...[
-                SizedBox(height: 70),
+                SizedBox(height: 60),
                 LeftBar(barWidth: 40),
                 SizedBox(height: 20),
                 LeftBar(barWidth: 70),
@@ -152,6 +152,12 @@ class _BMIScreenState extends State<BMIScreen> {
                 SizedBox(height: 50),
                 RightBar(barWidth: 70),
               ],
+              SizedBox(height: 20),
+                IconButton(
+                icon: Icon(Icons.table_chart),
+                onPressed: () {
+                  showBMITableDialog(context);
+                })
             ],
           ),
         ),
@@ -169,11 +175,11 @@ class _BMIScreenState extends State<BMIScreen> {
         bmiResult = bmi.toStringAsFixed(2);
 
         if (bmi > 25) {
-          textResult = "Over weight";
+          textResult = "Overweight";
         } else if (bmi >= 18.5 && bmi <= 25) {
           textResult = "Normal weight";
         } else {
-          textResult = "Under weight";
+          textResult = "Underweight";
         }
       });
     } else {
@@ -182,5 +188,52 @@ class _BMIScreenState extends State<BMIScreen> {
         textResult = '';
       });
     }
+  }
+
+  void showBMITableDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          child: Container(
+            padding: EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: DataTable(
+                columns: [
+                  DataColumn(label: Text('BMI')),
+                  DataColumn(label: Text('Weight Status')),
+                ],
+                rows: [
+                  DataRow(cells: [
+                    DataCell(Text('Below 18.5')),
+                    DataCell(Text('Underweight')),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text('18.5-24.9')),
+                    DataCell(Text('Normal weight')),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text('25.0-29.9')),
+                    DataCell(Text('Overweight')),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text('30.0-34.9')),
+                    DataCell(Text('Obesity class I')),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text('35.0-39.9')),
+                    DataCell(Text('Obesity class II')),
+                  ]),
+                  DataRow(cells: [
+                    DataCell(Text('Above 40')),
+                    DataCell(Text('Obesity class III')),
+                  ]),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
   }
 }
